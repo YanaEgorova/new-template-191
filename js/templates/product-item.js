@@ -12,10 +12,10 @@ export const item = (product) => {
                     <span class="product__price">$${(product.price).toFixed(2)}</span>
                 </div>
             </div>
-            <a href="product-page.html?id=${product.id}" class="btn btn--first" style="margin: ${product.isItRing ? 'auto' : ''}">details</a>
-            ${
-              product.isItRing ? '' : '<button class="btn js_add-to-cart">buy</button>'
-            }
+            <a href="product-page.html?id=${product.id}" class="btn btn--first" style="margin: ${product.type == "ring" || product.type == "clothing" ? 'auto' : ''}">details</a>
+    ${
+      product.type == "ring" || product.type == "clothing" ? '' : '<button class="btn js_add-to-cart">buy</button>'
+    }
         </div>
     </li>
     `
